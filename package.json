@@ -1,0 +1,35 @@
+{
+  "name": "@jammi/mongo",
+  "version": "0.4.0",
+  "description": "Jammi's mongodb wrapper",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "node --test --test-reporter spec test/*-spec.mjs",
+    "test:watch": "node --test --test-reporter spec --watch test/*-spec.mjs",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "publish:major": "npm version major && npm publish"
+  },
+  "author": "Jammi Heinonen <o@jammi.pro>",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "lib/**/*.mjs",
+    "package.json",
+    "package-lock.json"
+  ],
+  "devDependencies": {
+    "chai": "^4.3.8",
+    "eslint": "^8.49.0",
+    "mongodb-memory-server-core": "^8.15.1"
+  },
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "mongodb-memory-server": "^8.15.1"
+  }
+}
