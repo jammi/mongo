@@ -28,8 +28,7 @@ const testId = await testColl(async coll => {
   return _id;
 });
 
-let docCount = await testColl(async coll => coll.countDocuments());
-expect(docCount).to.be.a('number').that.equals(1);
+const docCount = await testColl(async coll => coll.countDocuments());
 
 // returns the number inserted into the document by querying the document by its id:
 const { number: demoNum } = await testColl(
@@ -39,6 +38,7 @@ const { number: demoNum } = await testColl(
 // removes the document:
 await testColl(async coll => coll.deleteOne({_id: testId}));
 
+// connections are automatically closed soon after the last access has been made
 ```
 
 
